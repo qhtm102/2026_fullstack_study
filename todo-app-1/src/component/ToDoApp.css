@@ -1,0 +1,159 @@
+/* Page override to center the app card on a gray background */
+#root {
+  background-color: #e9ecef !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-inline: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e9ecef;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Container for Todo App */
+.todo-app-container {
+  width: 100%;
+  max-width: 512px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ToDoHeader styling */
+.todo-header {
+  background-color: #22b8cf;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.todo-header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ToDoEditor styling */
+.todo-editor {
+  background-color: #495057;
+  display: flex;
+  align-items: stretch;
+  height: 50px;
+}
+
+.todo-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.todo-input::placeholder {
+  color: #adb5bd;
+}
+
+.todo-add-btn {
+  background-color: #868e96;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  width: 50px;
+  font-size: 24px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.todo-add-btn:hover {
+  background-color: #707880;
+}
+
+/* ToDoList and ToDoItem styling */
+.todo-list {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f3f5;
+  background-color: #ffffff;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+/* Alternating background color for even rows */
+.todo-item:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.todo-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo-checkbox {
+  display: block;
+}
+
+.todo-text {
+  flex: 1;
+  margin-left: 14px;
+  font-size: 15px;
+  color: #212529;
+  text-align: left;
+  user-select: none;
+}
+
+/* Completed/Checked state styling */
+.todo-item.completed .todo-text {
+  color: #adb5bd;
+  text-decoration: line-through;
+}
+
+/* Delete Button styling */
+.todo-delete-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.todo-delete-icon {
+  display: block;
+  transition: stroke 0.2s ease, transform 0.1s ease;
+}
+
+.todo-delete-btn:hover .todo-delete-icon circle,
+.todo-delete-btn:hover .todo-delete-icon line {
+  stroke: #f03e3e;
+}

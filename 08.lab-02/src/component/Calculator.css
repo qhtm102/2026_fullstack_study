@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@500;700&display=swap');
+
+/* Center the calculator on the screen */
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #2b303c 0%, #17191e 100%);
+  padding: 20px;
+}
+
+/* Calculator Outer Body */
+.calculator-body {
+  width: 360px;
+  background: linear-gradient(145deg, #3d434d, #25292f);
+  border: 1px solid #4a515c;
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 2px 3px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Top Section: Brand & Solar Panel */
+.calculator-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.brand-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8c96a5;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.solar-panel {
+  display: flex;
+  gap: 3px;
+  width: 90px;
+  height: 24px;
+  background: linear-gradient(180deg, #15181b, #202429);
+  border: 2px solid #1a1c20;
+  border-radius: 4px;
+  padding: 2px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.solar-strip {
+  flex: 1;
+  background: linear-gradient(90deg, #382c16 0%, #524120 50%, #382c16 100%);
+  border-radius: 1px;
+}
+
+/* Display screen container */
+.display-container {
+  background: #1b2622; /* Dark LCD background */
+  border: 4px solid #2e343d;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 25px;
+  box-shadow: 
+    inset 0 4px 10px rgba(0, 0, 0, 0.8),
+    0 1px 2px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Reflections on screen */
+.display-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.display-screen {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: 'Orbitron', monospace;
+  font-size: 2.4rem;
+  color: #5dfdcb;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 
+    0 0 12px rgba(93, 253, 203, 0.4),
+    0 0 2px rgba(93, 253, 203, 0.2);
+}
+
+/* Keypad Table styles */
+.calculator-grid {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 14px;
+  margin: -14px;
+}
+
+.calculator-grid td {
+  padding: 0;
+  margin: 0;
+}
+
+/* Buttons style */
+.btn-key {
+  width: 100%;
+  height: 58px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+/* Grey buttons for Numbers, dot, division */
+.text-key {
+  background: linear-gradient(180deg, #4f555e 0%, #3e434a 100%);
+  box-shadow: 
+    0 5px 0 #282b30,
+    0 8px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.text-key:hover {
+  background: linear-gradient(180deg, #595f69 0%, #464b53 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 7px 0 #282b30,
+    0 10px 18px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.text-key:active {
+  transform: translateY(4px);
+  box-shadow: 
+    0 1px 0 #282b30,
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Orange buttons for operators */
+.op-key {
+  background: linear-gradient(180deg, #ff9f0a 0%, #e08500 100%);
+  box-shadow: 
+    0 5px 0 #a36100,
+    0 8px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.op-key:hover {
+  background: linear-gradient(180deg, #ffaa24 0%, #eb8f05 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 7px 0 #a36100,
+    0 10px 18px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.op-key:active {
+  transform: translateY(4px);
+  box-shadow: 
+    0 1px 0 #a36100,
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Special styling for equal key */
+.btn-equal {
+  background: linear-gradient(180deg, #ff8c00 0%, #e06c00 100%);
+  box-shadow: 
+    0 5px 0 #9e4b00,
+    0 8px 15px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.btn-equal:hover {
+  background: linear-gradient(180deg, #ff971a 0%, #eb7305 100%);
+  box-shadow: 
+    0 7px 0 #9e4b00,
+    0 10px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn-equal:active {
+  transform: translateY(4px);
+  box-shadow: 
+    0 1px 0 #9e4b00,
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
