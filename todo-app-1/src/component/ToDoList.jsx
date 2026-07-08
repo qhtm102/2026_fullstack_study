@@ -46,10 +46,10 @@ export default function ToDoList () {
     <>
        <div className="todo-list">
         {
-          todoListItems.map((todo, index) => {
+          todoListItems.map((todo) => {
             return (
               <>
-                <ToDoItem key={index} text={todo.text} checked={todo.checked} />
+                <ToDoItem key={todo.id} todo={todo} />
               </>
             )
           })}
