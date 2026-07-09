@@ -1,0 +1,11 @@
+Open Api를 사용한 페이지를 React로 만들거야.
+
+1. src 폴더 안에 pages 폴더를 만들고, pages 폴더 안에서 ManuTest.jsx 파일로 만들어줘.
+2. 공공데이터 포탈의 open api를 사용해서 데이터를 화면에 띄울거야.
+2-1. 한 기업의 5년간의 자료를 기업매출금액, 기업영업이익, 기업 총자산금액, 사업연도, 법인등록번호를 화면에 띄어줘.
+2-2. 엔드포인트는 http://apis.data.go.kr/1160100/service/GetFinaStatInfoService_V2/getSummFinaStat_V2 이걸 사용하고
+	 인증키는 amkVoiGffeamYHpKvHLnPo6aNRUoVFS7nqkVjpw9LD%2Byf8CPGLYtmZH9U4fwvXTlj9L4lpDF7K9apDE26gF%2F%2BA%3D%3D 이걸 사용해서 Open Api를 연결해
+	 만약 연결에 오류가 발생했다면 알려줘.
+
+3. 작업이 완료되면 build는 하지마.
+ 
