@@ -1,0 +1,116 @@
+.etf-container {
+  --etf-bg: #f6f8fa;
+  --etf-surface: #ffffff;
+  --etf-surface-soft: #f0f4f6;
+  --etf-text: #172026;
+  --etf-muted: #65727c;
+  --etf-line: #dce4e8;
+  --etf-accent: #146c63;
+  --etf-accent-hover: #0f5851;
+  --etf-shadow: 0 16px 36px rgba(23, 32, 38, 0.08);
+
+  display: grid;
+  gap: 16px;
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+  color: var(--etf-text);
+  text-align: left;
+}
+
+.etf-container h1 {
+  margin: 0;
+  color: var(--etf-text);
+  font-size: clamp(26px, 3.2vw, 34px);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.search-area {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  background: var(--etf-surface);
+  border: 1px solid var(--etf-line);
+  border-radius: 8px;
+  box-shadow: var(--etf-shadow);
+}
+
+.search-area:empty {
+  display: none;
+}
+
+.result-area {
+  background: var(--etf-surface);
+  border: 1px solid var(--etf-line);
+  border-radius: 8px;
+  box-shadow: var(--etf-shadow);
+  overflow: hidden;
+}
+
+.result-area h3 {
+  margin: 0;
+  padding: 16px 18px 10px;
+  color: var(--etf-text);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.result-area .etf-table-wrap {
+  overflow: auto;
+}
+
+.etf-container table {
+  width: 100%;
+  min-width: 920px;
+  border-collapse: collapse;
+}
+
+.etf-container th,
+.etf-container td {
+  padding: 12px 14px;
+  border-top: 1px solid var(--etf-line);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.etf-container th {
+  background: var(--etf-surface-soft);
+  color: var(--etf-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.etf-container th:first-child,
+.etf-container td:first-child,
+.etf-container th:nth-child(2),
+.etf-container td:nth-child(2) {
+  text-align: left;
+}
+
+.etf-container tbody tr:hover {
+  background: color-mix(in srgb, var(--etf-accent) 7%, transparent);
+}
+
+.etf-container tbody td {
+  color: var(--etf-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.etf-container tbody tr:nth-child(2) td:nth-child(2) {
+  font-weight: 800;
+}
+
+@media (max-width: 620px) {
+  .etf-container {
+    width: min(100% - 20px, 1180px);
+    padding-top: 18px;
+  }
+
+  .search-area,
+  .result-area h3 {
+    padding: 14px;
+  }
+}

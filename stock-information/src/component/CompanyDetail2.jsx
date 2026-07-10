@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import "./company-summary.css";
 
 
 export default function CompanyDetail({companyInfo}) {
@@ -31,21 +30,17 @@ export default function CompanyDetail({companyInfo}) {
     }
     
     return(
-        <div className="company-summary">
-            <NavLink to="/test3" className="company-summary__back">
-                ← 기업 재무 목록으로
-            </NavLink>
-
-            <div className="company-summary__grid">
-                <div className="company-summary__metric">
-                    <span>5년간 평균 기업매출 금액</span>
-                    <strong>{formatMoney(saleAmtSum / 5)}</strong>
-                </div>
-                <div className="company-summary__metric">
-                    <span>5년간 평균 기업총자산 금액</span>
-                    <strong>{formatMoney(tastAmtSum / 5)}</strong>
-                </div>
+        <>
+            <div>
+                <br />
+                <NavLink to="/test3" > 기업 재무 목록으로 </NavLink>
             </div>
-        </div>
+            <div>
+                <h2>5년간 평균 기업매출 금액 : {formatMoney(saleAmtSum / 5)}</h2>
+                <h2>5년간 평균 기업총자산 금액 : {formatMoney(tastAmtSum / 5)}</h2>
+            </div>
+            
+            
+        </>
     )
 }

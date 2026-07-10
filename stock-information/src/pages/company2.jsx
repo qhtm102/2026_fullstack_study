@@ -6,7 +6,6 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer,
 } from 'recharts';
 import CompanyDetail from "../component/CompanyDetail";
-import "./company-page.css";
 
 const formatMoney = (value) => {
     if(value >= 1_0000_0000_0000) {
@@ -24,13 +23,13 @@ export default function Company () {
     const params = useParams()
     let companyId = params.companyId
     let companyName = params.companyName
-
-    // 가지고온 데이터는 immer등으로 저장해두고 호출 할 수 있게끔 조정
+    console.log(`companyId: ${companyId}`)
 
     const [financeData, setFinanceData] = useState([]);
 
     useEffect(() => {
     const getFinanceData = async () => {
+        console.log(`in useEffect, ${companyId}`)
       const years = [2019, 2020, 2021, 2022, 2023];
       const serviceKey = 'amkVoiGffeamYHpKvHLnPo6aNRUoVFS7nqkVjpw9LD%2Byf8CPGLYtmZH9U4fwvXTlj9L4lpDF7K9apDE26gF%2F%2BA%3D%3D'
       const url = '/api-proxy/1160100/service/GetFinaStatInfoService_V2/getSummFinaStat_V2'
@@ -59,7 +58,8 @@ export default function Company () {
         }
 
         setFinanceData(responses)
-
+        console.log(responses)
+        
 
       } catch (err) {
         console.log(err);
@@ -69,26 +69,20 @@ export default function Company () {
     }, [companyId]);
     
     return (
-        <div className="company-page">
-            <CompanyDetail companyInfo={financeData} />
+        <>  
+        <CompanyDetail companyInfo={financeData} />
 
-            <section className="company-page__panel">
-                <div className="company-page__panel-header">
-                    <h2>{companyName} 기업매출금액</h2>
-                </div>
-                <div className="company-page__chart">
-                    <ResponsiveContainer width="100%" height={500}>
-                        <LineChart data={financeData}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="bizYear" />
-                            <YAxis tickFormatter={formatMoney} />
-                            <Tooltip
-                                formatter={(value) => `${Number(value).toLocaleString("ko-KR")}원`} />
-                            <Line type="monotone" dataKey="enpSaleAmt" stroke="#df07bb" strokeWidth={5} />
-                        </LineChart>
-                    </ResponsiveContainer>
-                </div>
-            </section>
-        </div>
+        <h1>{companyName} 기업매출금액</h1>
+        <ResponsiveContainer width="100%" height={500}>
+          <LineChart data={financeData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="bizYear" />
+            <YAxis tickFormatter={formatMoney} />
+            <Tooltip
+              formatter={(value) => `${Number(value).toLocaleString("ko-KR")}원`} />
+            <Line type="monotone" dataKey="enpSaleAmt" stroke="#df07bb" strokeWidth={5} />
+          </LineChart>
+        </ResponsiveContainer>
+        </>
     )
 }

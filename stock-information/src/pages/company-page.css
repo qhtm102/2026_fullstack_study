@@ -1,0 +1,49 @@
+.company-page {
+  --cp-bg: #f6f8fa;
+  --cp-surface: #ffffff;
+  --cp-text: #172026;
+  --cp-muted: #65727c;
+  --cp-line: #dce4e8;
+  --cp-accent: #146c63;
+  --cp-shadow: 0 16px 36px rgba(23, 32, 38, 0.08);
+
+  display: grid;
+  gap: 16px;
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto;
+  color: var(--cp-text);
+}
+
+.company-page__panel {
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-line);
+  border-radius: 8px;
+  box-shadow: var(--cp-shadow);
+  overflow: hidden;
+}
+
+.company-page__panel-header {
+  padding: 16px 18px 10px;
+}
+
+.company-page__panel-header h2 {
+  margin: 0;
+  color: var(--cp-text);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.company-page__chart {
+  padding: 4px 12px 14px;
+}
+
+@media (max-width: 620px) {
+  .company-page__panel-header {
+    padding: 14px 14px 6px;
+  }
+
+  .company-page__chart {
+    padding: 4px 6px 12px;
+  }
+}

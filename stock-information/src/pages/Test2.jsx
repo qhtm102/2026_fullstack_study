@@ -1,8 +1,5 @@
-export default function Test2() {
+import StockDashboard from '../component/StockDashboard'
 
-    return(
-        <>
-            <h1>Test2</h1>
-        </>
-    )
+export default function Test2() {
+  return <StockDashboard />
 }

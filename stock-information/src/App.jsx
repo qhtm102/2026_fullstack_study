@@ -19,7 +19,6 @@ function App() {
         <Route path='/test2' element={<Test2 />} />
         <Route path='/test3' element={<Test3 />} />
           <Route path='/company/:companyId/:companyName' element={<Company />} />
-        
 
         </Route>
       </Routes>
